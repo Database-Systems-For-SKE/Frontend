@@ -1,6 +1,6 @@
 @media (max-width: 1920px){
-	
-	
+
+
 
 @media (max-width: 1000px){
 	#mal-book  .forbg select.classic{margin-top:10px;}
@@ -12,8 +12,10 @@
 #mal-gall .recn-gal div img{margin-top:20px;}
  .entry-header{    margin-left: auto;
     margin-top: -30%;}
-	
+
 }
+
+
 
 @media (max-width: 768px){
   .content {
@@ -27,13 +29,13 @@
     margin-top: -20%;
     padding-bottom: 24px;}
 	#mal-home h1{font-size:35px;}
-	
+
 	a.fa.fa-angle-down {
     padding: 7px 9px;
-   
+
     font-size: 10px;
     margin-top: -20px;
-   
+
 }
 }
 
