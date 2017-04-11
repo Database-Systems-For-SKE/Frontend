@@ -1,11 +1,11 @@
 
  /* ==============================================
   equal height
-  	=============================================== */ 
-	
+  	=============================================== */
+
 jQuery(function($) { // DOM is now read and ready to be manipulated
-  
-  
+
+
 
 
 
@@ -68,7 +68,7 @@ function main() {
 
    /* ==============================================
   	Testimonial Slider
-  	=============================================== */ 
+  	=============================================== */
 
   	$('a.page-scroll').click(function() {
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
@@ -95,14 +95,14 @@ function main() {
         }
     });
 
-    $('body').scrollspy({ 
+    $('body').scrollspy({
         target: '.navbar-default',
         offset: 80
     })
 
   	$(document).ready(function() {
   	  $("#team").owlCarousel({
-  	 
+
   	      navigation : false, // Show next and prev buttons
   	      slideSpeed : 300,
   	      paginationSpeed : 400,
@@ -120,7 +120,7 @@ function main() {
   	  });
 
   	  $("#clients").owlCarousel({
-  	 
+
   	      navigation : false, // Show next and prev buttons
   	      slideSpeed : 300,
   	      paginationSpeed : 400,
@@ -153,7 +153,7 @@ function main() {
     ======================================*/
 
  $(function () {
-                $('#datetimepicker1').datetimepicker();
+                // $('#datetimepicker1').datetimepicker();
             });
 
 
