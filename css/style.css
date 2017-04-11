@@ -6,7 +6,7 @@ body, html {
     font-family: 'Roboto', sans-serif;
     text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased !important;
-    color: #5a5a5a;
+    color: #000000;
 }
 
 h1 {
@@ -120,7 +120,7 @@ h4::before {
 /* Navigation */
 
 #mal-menu {
-    padding: 0px;
+    padding: 0;
     transition: all 0.8s;
 }
 
@@ -370,17 +370,19 @@ ul.about-list li span {
     margin-right: 10px;
 }
 
-#mal-about h4 {
+.detail {
     font-weight: 300;
+    font-size: 23px;
     color: #fff;
     margin-top: 50px;
     margin-bottom: 50px;
     letter-spacing: 5px;
 }
 
-#mal-about p {
+.description {
     color: #fff;
     font-weight: 300;
+    font-size: 19px;
     letter-spacing: 1px;
     font-family: 'Roboto', sans-serif;
     line-height: 2;
@@ -455,6 +457,7 @@ ul.about-list li span {
 /*booking*/
 
 #mal-book {
+
 }
 
 #mal-book .overlay {
@@ -516,6 +519,18 @@ ul.about-list li span {
     box-sizing: border-box;
     -webkit-appearance: none;
     -moz-appearance: none;
+}
+
+#mal-review {
+    padding: 90px 0;
+    background: #3a3d48;
+    margin-top: 100px;
+}
+
+#mal-service {
+    padding: 120px 0;
+    background: #3a3d48;
+    margin-top: 30px;
 }
 
 #mal-book .forbg select option {
@@ -1489,8 +1504,6 @@ button.btn.tf-btn.btn-default {
 
 .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus {
     outline: thin dotted;
-    outline: none;
-    outline-offset: none;
 }
 
 /* Footer */
