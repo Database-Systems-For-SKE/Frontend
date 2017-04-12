@@ -19,8 +19,11 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">
-    <link rel="stylesheet" type="IMG/css" href="css/merry.css">
-
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-datepicker.standalone.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-datepicker3.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-datepicker3.standalone.min.css">
+    <link rel="stylesheet" type="text/css" href="css/merry.css">
 
     <!-- Slider
     ================================================== -->
@@ -37,7 +40,6 @@
           rel='stylesheet' type='text/css'>
 
     <script type="text/javascript" src="js/modernizr-custom-3.4.0.min.js"></script>
-
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 
@@ -56,7 +58,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="index.html#" class="page-scroll">Home</a></li>
-                <li><a href="#mal-about" class="page-scroll">booking</a></li>
+                <li><a href="#mal-about" class="page-scroll">booking</a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -64,14 +66,9 @@
     <!-- /.container-fluid -->
 </nav>
 
-<section id="mal-book" class="text-center" style="background: url(img/03.jpg);
-	background-size: cover;
-	background-position: center;
-	background-attachment: fixed;
-	background-repeat: no-repeat;
+<section id="mal-book" class="text-center" style="background-size: cover;
+	background: url(img/03.jpg) no-repeat fixed center;
 	color: #ffffff;">
-
-    <!-- <h1><a href="index.html">Merry Grand Hotel</a></h1> -->
     <div class="overlay">
         <div class="container">
             <div class="row">
@@ -81,66 +78,35 @@
                     <div class="mg-bn-forms">
                         <form>
                             <div class="col-md-12 forbg">
-
-
-                                <div class="col-md-10 dropdown-buttons">
-                                    <link rel="stylesheet" href="css/merry.css"/>
-                                    <script src="js/jquery-ui-1.12.1.min.js"></script>
-                                    <script>
-                                        $(function () {
-                                            $("#datepicker,#datepicker1").datepicker();
-                                        });
-                                    </script>
-
+                                <div class="input-daterange input-group" id="datepicker">
+                                    <input type="text" class="input-sm form-control" name="start"/>
+                                    <span class="input-group-addon">to</span>
+                                    <input type="text" class="input-sm form-control" name="end"/>
                                 </div>
-
-                                <div class="col-md-3 dropdown-button">
-                                    <div class="book_date">
-                                        <form>
-                                            <input class="date" id="datepicker" type="text" value="Check In"
-                                                   onfocus="this.value = '';"
-                                                   onblur="if (this.value == '') {this.value = 'Check In';}">
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 dropdown-button">
-                                    <div class="book_date">
-                                        <form>
-                                            <input class="date1" id="datepicker1" type="text" value="Check Out"
-                                                   onfocus="this.value = '';"
-                                                   onblur="if (this.value == '') {this.value = 'Check Out';}">
-                                        </form>
-                                    </div>
-                                </div>
-
 
                                 <div class="col-md-6">
-                                    <div class="col-md-6">
-                                        <select class="form-control classic">
-                                            <option>ADULT</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <select class="form-control classic">
-                                            <option>CHILDRENS</option>
-                                            <option>0</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                        </select>
-                                    </div>
+                                    <select class="form-control classic">
+                                        <option>ADULT</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
                                 </div>
 
-
+                                <div class="col-md-6">
+                                    <select class="form-control classic">
+                                        <option>CHILDREN</option>
+                                        <option>0</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
                             </div>
-
 
                             <div class="col-md-12 book-btn">
                                 <button class="btn btn-default">BOOK NOW</button>
@@ -148,7 +114,6 @@
                         </form>
                     </div>
                 </div>
-                <div class="col-md-2"></div>
             </div>
         </div>
     </div>
@@ -169,10 +134,20 @@
 <script type="text/javascript" src="js/bootstrap-3.3.7.min.js"></script>
 <script type="text/javascript" src="js/SmoothScroll-1.4.6.min.js"></script>
 <script type="text/javascript" src="js/isotope.pkgd-3.0.3.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-datepicker-1.6.4.min.js"></script>
 <script src="js/owl.carousel-2.2.1.min.js"></script>
 
 <!-- Javascripts
     ================================================== -->
 <script type="text/javascript" src="js/main.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('.input-daterange').datepicker({
+            format: "dd/mm/yyyy",
+            toggleActive: true
+        });
+    });
+</script>
 </body>
 </html>
