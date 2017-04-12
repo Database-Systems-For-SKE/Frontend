@@ -8,6 +8,7 @@
 .datepicker {
     border-radius: 4px;
     direction: ltr
+
 }
 
 .datepicker-inline {
@@ -108,7 +109,7 @@
 }
 
 .datepicker table tr td.new, .datepicker table tr td.old {
-    color: #777
+    color: #777777;
 }
 
 .datepicker table tr td.day:hover, .datepicker table tr td.focused {
@@ -524,6 +525,7 @@
 }
 
 .datepicker.dropdown-menu {
+    font-family: 'Roboto', sans-serif;
     position: absolute;
     top: 100%;
     left: 0;
@@ -545,6 +547,7 @@
     color: #333;
     font-size: 13px;
     line-height: 1.42857143
+
 }
 
 .datepicker.datepicker-inline td, .datepicker.datepicker-inline th, .datepicker.dropdown-menu td, .datepicker.dropdown-menu th {
