@@ -9,6 +9,10 @@ body, html {
     color: #000000;
 }
 
+textarea {
+    resize: vertical;
+}
+
 h1 {
     text-transform: uppercase;
 }

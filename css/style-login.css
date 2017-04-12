@@ -6,15 +6,15 @@
 }
 
 body {
-  background: #2c3338;
-  color: #606468;
+  background: #FEDBE2;
+  color: #f2f2f2;
   font: 87.5%/1.5em 'Open Sans', sans-serif;
   margin: 0;
 }
 
 input {
   border: none;
-  font-family: 'Open Sans', Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   line-height: 1.5em;
   padding: 0;
@@ -37,16 +37,14 @@ after { clear: both; }
   padding: 22px 22px 22px 22px;
   width: 100%;
   border-radius: 5px;
-  background: #282e33;
-  border-top: 3px solid #434a52;
-  border-bottom: 3px solid #434a52;
+  background: #FFFFFF;
 }
 
 #login form span {
-  background-color: #363b41;
+  background-color: #c4e3f3;
   border-radius: 3px 0px 0px 3px;
-  border-right: 3px solid #434a52;
-  color: #606468;
+  border-right: 3px solid #c4e3f3;
+  color: #FFFFFF;
   display: block;
   float: left;
   line-height: 50px;
@@ -56,8 +54,9 @@ after { clear: both; }
 }
 
 #login form input[type="text"] {
-  background-color: #3b4148;
+  background-color: #FFFFFF;
   border-radius: 0px 3px 3px 0px;
+  border-color: #000000;
   color: #a9a9a9;
   margin-bottom: 1em;
   padding: 0 16px;
@@ -66,7 +65,7 @@ after { clear: both; }
 }
 
 #login form input[type="password"] {
-  background-color: #3b4148;
+  background-color: #FFFFFF;
   border-radius: 0px 3px 3px 0px;
   color: #a9a9a9;
   margin-bottom: 1em;
