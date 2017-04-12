@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    // JavaScript form validation
 
     var checkPassword = function(str)
     {
