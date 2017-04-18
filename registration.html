@@ -54,7 +54,6 @@ VALUES ('1001++', '#firstname', '#last_name', '#address', '#email', '#password')
                                         <div class="col-md-7 col-md-offset-2 col-xs-12 col-sm-11">
                                             <form id="myForm" role="form" method="POST" action="...">
                                                 <fieldset>
-
                                                     <div class="form-group col-md-6 col-xs-6 col-sm-6">
                                                         <input id="field_fn"  class="form-control" title="name must not be blank and contain only letters, numbers and underscores."
                                                                type="text" required pattern="\w+" name="username" id="first_name" placeholder="FIRSTNAME">
@@ -82,11 +81,9 @@ VALUES ('1001++', '#firstname', '#last_name', '#address', '#email', '#password')
                                                         <input id="field_pwd2" class="form-control" title="please enter the same password."
                                                                type="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" name="pwd2" placeholder="COMFIRM PASSWORD">
                                                     </div>
-
                                                 </fieldset>
-
                                                 <div class="col-md-12 book-btn">
-                                                    <button class="btn btn-default" type="submit" value="Submit">REGISTRATION NOW</button>
+                                                    <button class="btn btn-default" type="submit" value="Submit" onclick="location.href='booking.html'">REGISTRATION NOW</button>
                                                     <div class="col-md-12">
                                                         <br>
                                                         <a href="login.html">already have an account ?</a>
