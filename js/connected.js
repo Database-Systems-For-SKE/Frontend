@@ -3,23 +3,15 @@
  */
 
 
-
 function getData() {
-    $(document).ready(function () {
-        $("regist_bt").click(function (e) {
-            var first_name = document.getElementById("first_name").value;
-            var last_name = document.getElementById("last_name").value;
-            var address = document.getElementById("address").value;
-            var email = document.getElementById("email").value;
-            var password = document.getElementById("field_pwd1").value;
-            sendRequest();
-            e.preventDefault();
-            window.open(booking.html);
-        });
-    });
-
+    var first_name = document.getElementById("first_name").value;
+    var last_name = document.getElementById("last_name").value;
+    var address = document.getElementById("address").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("field_pwd1").value;
+    sendRequest();
+    window.parent.location = "booking.html";
 }
-
 
 function sendRequest() {
     var request = $.ajax({
@@ -38,16 +30,6 @@ function sendRequest() {
     });
 
 
-    request.done(function (response, status, xhr) {
-        console.log("status: " + status);
-        console.log(JSON.stringify(response));
-    });
-
-
-    request.fail(function (xhr, status, error) {
-        console.log("status: " + status);
-        console.log("erroe: " + error);
-    });
 }
 
 

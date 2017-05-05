@@ -3,7 +3,9 @@
  =============================================== */
 
 jQuery(function ($) { // DOM is now read and ready to be manipulated
+
     equalheight = function (container) {
+
         var currentTallest = 0,
             currentRowStart = 0,
             rowDivs = [],
@@ -31,7 +33,7 @@ jQuery(function ($) { // DOM is now read and ready to be manipulated
                 rowDivs[currentDiv].height(currentTallest);
             }
         });
-    };
+    }
 
     $(window).load(function () {
         equalheight('.eq-blocks');
@@ -42,18 +44,14 @@ jQuery(function ($) { // DOM is now read and ready to be manipulated
         equalheight('.eq-blocks');
     });
 
-
-    $('#datepicker').find('.input-daterange').datepicker({
-        format: "dd/mm/yyyy",
-        autoclose: true,
-        toggleActive: true
-    });
 });
 
 
 function main() {
+
     (function () {
         'use strict';
+
         /* ==============================================
          Testimonial Slider
          =============================================== */
@@ -86,7 +84,7 @@ function main() {
         $('body').scrollspy({
             target: '.navbar-default',
             offset: 80
-        });
+        })
 
         $(document).ready(function () {
             $("#team").owlCarousel({
@@ -104,7 +102,7 @@ function main() {
                     [1200, 3],
                     [1400, 3],
                     [1600, 3]
-                ]
+                ],
             });
 
             $("#clients").owlCarousel({
@@ -122,7 +120,7 @@ function main() {
                     [1200, 5],
                     [1400, 5],
                     [1600, 5]
-                ]
+                ],
             });
 
             $("#testimonial").owlCarousel({
@@ -131,6 +129,7 @@ function main() {
                 paginationSpeed: 400,
                 singleItem: true
             });
+
         });
 
 
@@ -170,7 +169,12 @@ function main() {
                 });
                 return false;
             });
+
         });
+
+
     }());
+
+
 }
 main();
