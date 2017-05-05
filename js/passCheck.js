@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function() {
 
 
@@ -41,8 +42,6 @@ document.addEventListener("DOMContentLoaded", function() {
     var myForm = document.getElementById("myForm");
     myForm.addEventListener("submit", checkForm, true);
 
-    // HTML5 form validation
-
     var supports_input_validity = function()
     {
         var i = document.createElement("input");
@@ -60,8 +59,6 @@ document.addEventListener("DOMContentLoaded", function() {
         pwd1Input.setCustomValidity(pwd1Input.title);
 
         var pwd2Input = document.getElementById("field_pwd2");
-
-        // input key handlers
 
         fnInput.addEventListener("keyup", function() {
             fnInput.setCustomValidity(this.validity.patternMismatch ? fnInput.title : "");
