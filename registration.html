@@ -52,28 +52,28 @@ VALUES ('1001++', '#firstname', '#last_name', '#address', '#email', '#password')
                                             <form id="myForm" role="form" method="POST" action="...">
                                                 <fieldset>
                                                     <div class="form-group col-md-6 col-xs-6 col-sm-6">
-                                                        <input id="field_fn" class="form-control"
+                                                        <input class="form-control"
                                                                title="name must not be blank and contain only letters, numbers and underscores."
                                                                type="text" required pattern="\w+" name="username"
                                                                id="first_name" placeholder="FIRSTNAME">
                                                     </div>
                                                     <div class="form-group col-md-6 col-xs-6 col-sm-6">
-                                                        <input id="field_ln" class="form-control"
+                                                        <input class="form-control"
                                                                title="name must not be blank and contain only letters, numbers and underscores."
                                                                type="text" required pattern="\w+" name="username"
                                                                id="last_name" placeholder="LASTNAME">
 
                                                     </div>
                                                     <div class="form-group col-md-12 col-xs-12 col-sm-12">
-                                                        <textarea type="text" class="form-control" name="" id="address"
+                                                        <textarea type="text" class="form-control" id="address"
                                                                   placeholder="ADDRESS"></textarea>
                                                     </div>
                                                     <div class="form-group col-md-12 col-xs-12 col-sm-12">
-                                                        <input type="email" class="form-control" name="" id="email"
+                                                        <input type="email" class="form-control" id="email"
                                                                placeholder="EMAIL">
                                                     </div>
                                                     <div class="form-group col-md-6 col-xs-6 col-sm-6">
-                                                        <input id="field_pwd1" class="form-control"
+                                                        <input id="password" class="form-control"
                                                                title="password must contain at least 6 characters, including uppercase & lowercase and numbers."
                                                                type="password" required
                                                                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" name="pwd1"
@@ -90,7 +90,7 @@ VALUES ('1001++', '#firstname', '#last_name', '#address', '#email', '#password')
                                                 </fieldset>
                                                 <div class="col-md-12 book-btn">
                                                     <button id="submit" class="btn btn-default" type="submit"
-                                                            value="Submit" click="getData()">REGISTRATION NOW
+                                                            value="Submit">REGISTRATION NOW
                                                     </button>
                                                     <div class="col-md-12">
                                                         <br>
