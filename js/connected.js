@@ -4,13 +4,18 @@
 
 
 function getData() {
-    var first_name = document.getElementById("first_name").value;
-    var last_name = document.getElementById("last_name").value;
-    var address = document.getElementById("address").value;
-    var email = document.getElementById("email").value;
-    var password = document.getElementById("field_pwd1").value;
-    sendRequest();
-    window.parent.location = "booking.html";
+    $(document).ready(function () {
+        $("#submit").click(function () {
+            var first_name = document.getElementById("first_name").value;
+            console.log(first_name);
+            var last_name = document.getElementById("last_name").value;
+            var address = document.getElementById("address").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("field_pwd1").value;
+            sendRequest();
+            window.parent.location = "booking.html";
+        });
+    });
 }
 
 function sendRequest() {
@@ -26,10 +31,11 @@ function sendRequest() {
             "address_s": address,
             "email_s": email,
             "password": password
+        },
+        success: function (response) {
+            alert(response);
         }
     });
-
-
 }
 
 
