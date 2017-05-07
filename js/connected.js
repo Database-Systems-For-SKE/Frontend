@@ -22,7 +22,6 @@ function sendRequest() {
     var request = $.ajax({
         method: "POST",
         url: "api.kamontat.me",
-        contentType: "application/json",
         dataType: "json",
         data: {
             "action": "insert_customer",
@@ -31,11 +30,15 @@ function sendRequest() {
             "address_s": address,
             "email_s": email,
             "password": password
-        },
-        success: function (response) {
-            alert(response);
         }
     });
+    
+    request.done(function (response, status, xhr) {
+        alert("Is success: " + response.success + "\n response: " + JSON.stringify(response));
+    });
+    
+    request.fail(function (xhr, status, error) {
+        alert(error);
+        console.log(xhr);
+    });
 }
-
-
