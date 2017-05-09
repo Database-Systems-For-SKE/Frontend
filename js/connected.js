@@ -4,20 +4,27 @@
 
 function insert_customer() {
     console.log("hi! i'm ur new customer ♡");
-    $.ajax({
+    var request = $.ajax({
         type: 'post',
-        url: 'customer.php',
+        url: 'https://api.kamontat.me',
         data: {
-            'key': 'insert_customer',
-            'first_name': document.getElementById('first_name').value,
-            'last_name': document.getElementById('last_name').value,
-            'address': document.getElementById('address').value,
-            'email': document.getElementById('email').value,
+            'action': 'insert_customer',
+            'first_s': document.getElementById('first_name').value,
+            'last_s': document.getElementById('last_name').value,
+            'address_s': document.getElementById('address').value,
+            'email_s': document.getElementById('email').value,
             'password': document.getElementById('password').value
-        },
-        success: function (data) {
-            console.log("insert customer is success: " + data);
         }
+    });
+
+    request.done(function (data, status, xhr) {
+        console.log("Insert customer is success: " + data.success);
+        // complete do something
+    });
+
+    request.fail(function (xhr, status, error) {
+        console.log(xhr);
+        // error do something
     });
 }
 
