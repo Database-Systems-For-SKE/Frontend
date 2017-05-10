@@ -4,13 +4,10 @@
 
 $(document).ready(function() {
     $("#team a").click(function(event) {
-        // alert(event);
-        // console.log(event);
+        alert(event.currentTarget.attributes.id.value);
         var id  = event.currentTarget.attributes.id.value;
         Cookies.set('RoomTypeID', id);
-
         window.location.href = "registration.html"
     });
-
     console.log(Cookies.get('RoomTypeID'));
 });

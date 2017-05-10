@@ -20,6 +20,8 @@ checkOutDate, roomID, customerID-->
     <script type="text/javascript" src="js/bootstrap-datepicker-1.6.4.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/respond-1.4.2.min.js"></script>
+    <script type="text/javascript" src="js/connected.js"></script>
+    <script type="text/javascript" src="js/cookie.js"></script>
 </head>
 <body>
 <nav id="mal-menu" class="navbar navbar-default navbar-fixed-top">
@@ -82,7 +84,7 @@ checkOutDate, roomID, customerID-->
                                     </div>
                                     <div class="col-md-12 book-btn">
                                         <br>
-                                        <button class="btn btn-default" onclick="location.href='payment.html'" type="button">BOOK NOW</button>
+                                        <button class="btn btn-default" onclick="booking()" type="button">BOOK NOW</button>
                                     </div>
                                 </div>
                             </div>
@@ -98,7 +100,7 @@ checkOutDate, roomID, customerID-->
 <script>
     $(document).ready(function () {
         $('.input-daterange').datepicker({
-            format: "dd/mm/yyyy",
+            format: "yyyy/mm/dd",
             toggleActive: true
         });
     });
