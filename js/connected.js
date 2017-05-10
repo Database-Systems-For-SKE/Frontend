@@ -18,7 +18,10 @@ function insert_customer() {
     });
 
     request.done(function (data, status, xhr) {
-        console.log("Insert customer is success: " + data.success);
+        if (data.success === "true") {
+            load_booking();
+        }
+        console.log("Insert customer is success: " + JSON.stringify(data));
         // complete do something
     });
 
@@ -30,17 +33,25 @@ function insert_customer() {
 
 function login() {
     console.log("i'm your old customer! ♡");
-    $.ajax({
+    var request = $.ajax({
         type: 'post',
-        url: 'customer.php',
+        url: 'https://api.kamontat.me',
         data: {
-            'key': 'login',
-            'input_email': document.getElementById('InputEmail').value,
-            'input_password': document.getElementById('InputPassword').value
+            "action": "login",
+            "email_s": document.getElementById('InputEmail').value,
+            "password": document.getElementById('InputPassword').value
         },
         success: function (data) {
-            console.log("login is success: " + data);
+            console.log(data);
+            if (data.success === "true") {
+                console.log(data.CustomerID);
+                Cookies.set("CustomerID", data.CustomerID);
+            }
         }
+    });
+
+    request.fail(function (xhr) {
+        console.log(xhr);
     });
 }
 
