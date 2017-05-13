@@ -69,15 +69,18 @@ function insert_payment() {
      		"action":"insert_payment",
      		"card_name_s": document.getElementById('nameOnCard').value,
      		"card_number_s": document.getElementById('creditCardNo').value,
-     		"expire_data_s": document.getElementById('expireDate').value
-  	},
-        success: function (data) {
-            console.log("payment is success: " + data);
+     		"expire_data_s": document.getElementById('expireDate').value,
+            "book_id_i": Cookies.get("bookID")
+  	    },
+        success: function (data, status, xhr) {
+            console.log(data.message);
+            console.log("payment is success: " + status);
+            console.log(xhr);
         }
     });
 
     request.fail(function(xhr) {
-	console.log(xhr);
+	    console.log(xhr);
     });
 }
 
@@ -94,7 +97,7 @@ function booking() {
         data: {
             "action": "booking",
             "customer_id_i": Cookies.get('customerID') /* not finish yet */,
-            "room_id_i": 1001 /* not finish yet */,
+            "room_type_id_i": Cookies.get('RoomTypeID') /* not finish yet */,
             "night_i": days_between($("#checkin").datepicker("getDate"), $("#checkout").datepicker("getDate")),
             "check_in_s": $("#checkin").datepicker("getDate"),
             "check_out_s": $("#checkout").datepicker("getDate")
@@ -108,10 +111,10 @@ function booking() {
 
 function days_between(date1, date2) {
     var ONE_DAY = 1000 * 60 * 60 * 24;
-    var date1_ms = date1.getTime()
-    var date2_ms = date2.getTime()
-    var difference_ms = Math.abs(date1_ms - date2_ms)
-    return Math.round(difference_ms / ONE_DAY)
+    var date1_ms = date1.getTime();
+    var date2_ms = date2.getTime();
+    var difference_ms = Math.abs(date1_ms - date2_ms);
+    return Math.round(difference_ms / ONE_DAY);
 }
 
 
