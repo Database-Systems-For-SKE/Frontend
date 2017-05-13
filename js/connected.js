@@ -62,18 +62,22 @@ function login() {
 
 function insert_payment() {
     console.log("payment method ♡");
-    $.ajax({
+    var request = $.ajax({
         type: 'post',
-        url: 'customer.php',
+        url: 'https://api.kamontat.me',
         data: {
-            'key': 'payment',
-            'nameOnCard': document.getElementById('nameOnCard').value,
-            'creditCardNo': document.getElementById('creditCardNo').value,
-            'expireDate': document.getElementById('expireDate').value
-        },
+     		"action":"insert_payment",
+     		"card_name_s": document.getElementById('nameOnCard').value,
+     		"card_number_s": document.getElementById('creditCardNo').value,
+     		"expire_data_s": document.getElementById('expireDate').value
+  	},
         success: function (data) {
             console.log("payment is success: " + data);
         }
+    });
+
+    request.fail(function(xhr) {
+	console.log(xhr);
     });
 }
 
