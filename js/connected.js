@@ -24,11 +24,14 @@ function insert_customer() {
             load_booking();
         }
         console.log("insert customer is success: " + JSON.stringify(data));
+        console.log("customerID: " + data.customer_id_i);
+        Cookies.set("customerID", data.customer_id_i);
+        alert(Cookies.get('customerID'));
     });
 
     request.fail(function (xhr, status, error) {
         alert("please make sure you complete everything ♡");
-        console.log(xhr);
+        console.log("error: " + xhr);
     });
 }
 
@@ -45,8 +48,9 @@ function login() {
         success: function (data) {
             console.log(data);
             if (data.success === "true") {
-                console.log(data.customerID);
-                Cookies.set("customerID", data.customerID);
+                console.log("customerID: " + data.customer_id_i);
+                Cookies.set("customerID", data.customer_id_i);
+                alert(Cookies.get('customerID'));
             } else {
                 alert("the email address or password you entered is not valid ♡\n" +
                     "you can sign up your new account by clicking a link below.");
@@ -70,12 +74,13 @@ function insert_payment() {
      		"card_name_s": document.getElementById('nameOnCard').value,
      		"card_number_s": document.getElementById('creditCardNo').value,
      		"expire_data_s": document.getElementById('expireDate').value,
-            "book_id_i": Cookies.get("bookID")
+            "book_id_i": Cookies.get('customerID')
   	    },
         success: function (data, status, xhr) {
             console.log(data.message);
             console.log("payment is success: " + status);
             console.log(xhr);
+            window.location.href = 'ty.html';
             if (data.success === "false") {
                 alert("please make sure you complete everything ♡");
             }

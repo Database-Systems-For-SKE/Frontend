@@ -67,4 +67,12 @@ function booking($bookingID, $numberOfNight, $checkInDate, $checkOutDate, $roomI
   }
 }
 
+ function select() {
+    $db = $GLOBALS['db'];
+    $sql = "SELECT *
+           FROM Payment P
+           INNER JOIN Booking B ON P.bookingID = B.bookingID INNER JOIN CustomerDetail C ON B.customerID = C.customerID";
+    $result = $conn->query($sql);
+ }
+
 ?>
