@@ -23,9 +23,15 @@ function insert_customer() {
         if (data.success === "true") {
             load_booking();
         }
-        console.log("insert customer is success: " + JSON.stringify(data));
-        console.log("customerID: " + data.customerID);
-        Cookies.set("customerID", data.customerID);
+        console.log("insert customer is success: " + data.success);
+        var id = 0;
+        if (data.customerID.constructor === Array) {
+            id = data.customerID[data.customerID.length - 1]
+        } else {
+            id = data.customerID;
+        }
+        console.log("customerID: " + id);
+        Cookies.set("customerID", id);
         alert(Cookies.get('customerID'));
     });
 
@@ -70,12 +76,12 @@ function insert_payment() {
         type: 'post',
         url: 'https://api.kamontat.me',
         data: {
-     		"action":"insert_payment",
-     		"card_name_s": document.getElementById('nameOnCard').value,
-     		"card_number_s": document.getElementById('creditCardNo').value,
-     		"expire_data_s": document.getElementById('expireDate').value,
+            "action": "insert_payment",
+            "card_name_s": document.getElementById('nameOnCard').value,
+            "card_number_s": document.getElementById('creditCardNo').value,
+            "expire_data_s": document.getElementById('expireDate').value,
             "book_id_i": Cookies.get('customerID')
-  	    },
+        },
         success: function (data, status, xhr) {
             console.log(data.message);
             console.log("payment is success: " + status);
@@ -87,8 +93,33 @@ function insert_payment() {
         }
     });
 
-    request.fail(function(xhr) {
-	    console.log(xhr);
+    request.fail(function (xhr) {
+        console.log(xhr);
+    });
+}
+
+function getPrice() {
+    var request = $.ajax({
+        type: 'get',
+        url: 'https://api.kamontat.me',
+        data: {
+            "action": "select",
+            "table_s": "RoomType",
+            "columns_as": "typePrice",
+            "conditions_as": "typeID=" + Cookies.get('RoomTypeID')
+        },
+        success: function (data, status, xhr) {
+            if (data.success === "false") {
+                alert("please make sure you complete everything ♡");
+            } else {
+                var price = data.typePrice;
+                document.getElementById('price').children[0].innerText = "TOTAL PRICE: " + price + "THB";
+            }
+        }
+    });
+
+    request.fail(function (xhr) {
+        console.log(xhr);
     });
 }
 
