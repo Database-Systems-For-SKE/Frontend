@@ -45,7 +45,7 @@ VALUES ('1001++', '#firstname', '#last_name', '#address', '#email', '#password')
                 <div class="col-sm-12 col-lg-12 col-md-12 book-bg mg-book-now">
                     <h4 class="wt bokk">registration</h4>
                     <div class="mg-bn-forms">
-                        <form>
+                        <form data-toggle="validator" role="form">
                             <div class="col-md-12 forbg col-sm-12">
                                 <div class="container">
                                     <div class="row">
@@ -68,12 +68,14 @@ VALUES ('1001++', '#firstname', '#last_name', '#address', '#email', '#password')
                                                                placeholder="EMAIL">
                                                     </div>
                                                     <div class="form-group col-md-6 col-xs-6 col-sm-6">
-                                                        <input type="password" id="password" class="form-control"
-                                                               placeholder="PASSWORD">
+                                                        <input type="password" id="password" class="form-control" data-minlength="6"
+                                                               placeholder="PASSWORD" required>
+                                                        <div class="help-block">passwords should be at least 6 characters</div>
                                                     </div>
                                                     <div class="form-group col-md-6 col-xs-6 col-sm-6">
                                                         <input type="password" id="field_pwd2" class="form-control"
-                                                               placeholder="COMFIRM PASSWORD">
+                                                               placeholder="COMFIRM PASSWORD" data-match="#password" data-match-error="please make sure your passwords match." required>
+                                                        <div class="help-block with-errors"></div>
                                                     </div>
                                                 </fieldset>
                                                 <div class="col-md-12 book-btn">

@@ -35,11 +35,6 @@ jQuery(function ($) { // DOM is now read and ready to be manipulated
         });
     }
 
-    $(window).load(function () {
-        equalheight('.eq-blocks');
-    });
-
-
     $(window).resize(function () {
         equalheight('.eq-blocks');
     });
@@ -88,7 +83,6 @@ function main() {
 
         $(document).ready(function () {
             $("#team").owlCarousel({
-
                 navigation: false, // Show next and prev buttons
                 slideSpeed: 300,
                 paginationSpeed: 400,
@@ -132,49 +126,9 @@ function main() {
 
         });
 
-
-        /*====================================
-         DATE PICKER
-         ======================================*/
-
-        $(function () {
-            // $('#datetimepicker1').datetimepicker();
-        });
-
-
-        /*====================================
-         Portfolio Isotope Filter
-         ======================================*/
-        $(window).load(function () {
-            var $container = $('#lightbox');
-            $container.isotope({
-                filter: '*',
-                animationOptions: {
-                    duration: 750,
-                    easing: 'linear',
-                    queue: false
-                }
-            });
-            $('.cat a').click(function () {
-                $('.cat .active').removeClass('active');
-                $(this).addClass('active');
-                var selector = $(this).attr('data-filter');
-                $container.isotope({
-                    filter: selector,
-                    animationOptions: {
-                        duration: 750,
-                        easing: 'linear',
-                        queue: false
-                    }
-                });
-                return false;
-            });
-
-        });
-
-
     }());
 
 
 }
 main();
+

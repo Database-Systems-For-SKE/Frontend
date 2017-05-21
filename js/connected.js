@@ -27,8 +27,8 @@ function insert_customer() {
     });
 
     request.fail(function (xhr, status, error) {
+        alert("please make sure you complete everything ♡");
         console.log(xhr);
-
     });
 }
 
@@ -73,6 +73,9 @@ function insert_payment() {
         },
         success: function (data) {
             console.log("payment is success: " + data);
+            if (data.success === "false") {
+                alert("please make sure you complete everything ♡");
+            }
         }
     });
 }
