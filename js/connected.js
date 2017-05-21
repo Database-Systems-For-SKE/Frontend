@@ -24,8 +24,8 @@ function insert_customer() {
             load_booking();
         }
         console.log("insert customer is success: " + JSON.stringify(data));
-        console.log("customerID: " + data.customer_id_i);
-        Cookies.set("customerID", data.customer_id_i);
+        console.log("customerID: " + data.customerID);
+        Cookies.set("customerID", data.customerID);
         alert(Cookies.get('customerID'));
     });
 
