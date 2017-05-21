@@ -32,7 +32,7 @@ function insert_customer() {
         }
         console.log("customerID: " + id);
         Cookies.set("customerID", id);
-        alert(Cookies.get('customerID'));
+        // alert(Cookies.get('customerID'));
     });
 
     request.fail(function (xhr, status, error) {
@@ -54,9 +54,14 @@ function login() {
         success: function (data) {
             console.log(data);
             if (data.success === "true") {
-                console.log("customerID: " + data.customer_id_i);
-                Cookies.set("customerID", data.customer_id_i);
-                alert(Cookies.get('customerID'));
+                var id = 0;
+                if (data.customerID.constructor === Array) {
+                    id = data.customerID[data.customerID.length - 1]
+                } else {
+                    id = data.customerID;
+                }
+                Cookies.set("customerID", id);
+                // alert(Cookies.get('customerID'));
             } else {
                 alert("the email address or password you entered is not valid ♡\n" +
                     "you can sign up your new account by clicking a link below.");
