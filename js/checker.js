@@ -11,8 +11,10 @@ function check_days() {
 
 function check_pass() {
     console.log("hi i'm password checker ♡");
-    if (document.getElementById('password').value !=  document.getElementById('field_pwd2').value) {
-        console.log("please make sure your passwords match ♡");
+    var password = document.getElementById('password').value;
+    var confirm_pass = document.getElementById('field_pwd2').value;
+    if (password != confirm_pass) {
+        alert("please make sure your passwords match ♡");
         document.getElementById('field_pwd2').focus();
     } else {
         document.getElementById("regForm").submit();
