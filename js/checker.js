@@ -13,8 +13,8 @@ function check_pass() {
     console.log("hi i'm password checker ♡");
     var password = document.getElementById('password').value;
     var confirm_pass = document.getElementById('field_pwd2').value;
-    if (password != confirm_pass) {
-        alert("please make sure your passwords match ♡");
+    if (password != $("field_pwd2").val()) {
+        console.log("please make sure your passwords match ♡");
         document.getElementById('field_pwd2').focus();
     } else {
         document.getElementById("regForm").submit();
