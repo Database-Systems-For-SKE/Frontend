@@ -113,7 +113,7 @@ function getPrice() {
                 alert("please make sure you complete everything ♡");
             } else {
                 var price = data.typePrice;
-                document.getElementById('price').children[0].innerText = "TOTAL PRICE: " + price + "THB";
+                document.getElementById('price').children[0].innerText = "TOTAL PRICE: " + price + " THB";
             }
         }
     });
