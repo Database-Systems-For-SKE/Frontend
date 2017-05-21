@@ -91,9 +91,10 @@ function insert_payment() {
             console.log(data.message);
             console.log("payment is success: " + status);
             console.log(xhr);
-            window.location.href = 'ty.html';
             if (data.success === "false") {
                 alert("please make sure you complete everything ♡");
+            } else {
+                window.location.href = 'ty.html';
             }
         }
     });
