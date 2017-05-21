@@ -18,6 +18,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/connected.js"></script>
     <script src="js/index.js"></script>
+    <script type="text/javascript" src="js/cookie.js"></script>
+    <script type="text/javascript" src="js/bootstrap-datepicker-1.6.4.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-datepicker3.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-datepicker3.standalone.min.css">
 </head>
 
 <body>
@@ -57,7 +61,11 @@
                                     <input maxlength="16" type="number" class="form-control" placeholder="CARD NUMBER"
                                            id="creditCardNo">
                                     <br>
-                                    <input type="date" class="form-control" id="expireDate" placeholder="EXPIRE DATE">
+                                    <div class="input-daterange" data-date-start-date="+1d"
+                                         id="datepicker">
+                                        <input type="text" class="form-control" style="text-align: left" name="start"
+                                               placeholder="EXPIRE DATE" id="expireDate"/>
+                                    </div>
                                     <br>
                                     <div class="col-md-12 book-btn">
                                         <button class="btn btn-default" onclick="insert_payment()"
@@ -73,7 +81,13 @@
         </div>
     </div>
 </section>
-
-
+<script>
+    $(document).ready(function () {
+        $('.input-daterange').datepicker({
+            format: "yyyy/mm/dd",
+            toggleActive: true
+        });
+    });
+</script>
 </body>
 </html>
