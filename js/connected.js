@@ -32,12 +32,11 @@ function insert_customer() {
         }
         console.log("customerID: " + id);
         Cookies.set("customerID", id);
-        // alert(Cookies.get('customerID'));
     });
 
     request.fail(function (xhr, status, error) {
         alert("please make sure you complete everything ♡");
-        console.log("error: " + xhr);
+        console.log("error in insert_customer: " + xhr);
     });
 }
 
@@ -77,6 +76,7 @@ function login() {
 
 function insert_payment() {
     console.log("payment method ♡");
+    // console.log(Cookies.get('bookID'));
     var request = $.ajax({
         type: 'post',
         url: 'https://api.kamontat.me',
@@ -85,7 +85,7 @@ function insert_payment() {
             "card_name_s": document.getElementById('nameOnCard').value,
             "card_number_s": document.getElementById('creditCardNo').value,
             "expire_data_s": document.getElementById('expireDate').value,
-            "book_id_i": Cookies.get('customerID')
+            "book_id_i": Cookies.get('bookID')
         },
         success: function (data, status, xhr) {
             console.log(data.message);
@@ -125,30 +125,27 @@ function getPrice() {
     });
 }
 
-    function getCustomer() {
-        var request = $.ajax({
-            type: 'get',
-            url: 'https://api.kamontat.me',
-            data: {
-                "action": "select",
-                "table_s": "CustomerDetail",
-                "columns_as": "firstName, lastName",
-                "conditions_as": "customerID=" + Cookies.get('customerID')
-            },
-            success: function (data, status, xhr) {
-                if (data.success === "true") {
-                    var name = data.firstName;
-                    var surename = data.lastName;
-                    console.log("name: " + name);
-                    document.getElementById('name').children[0].innerText = "CUSTOMER: " + name.toUpperCase() + " " + surename.toUpperCase() + " ♡";
-                }
+function getCustomer() {
+    var request = $.ajax({
+        type: 'get',
+        url: 'https://api.kamontat.me',
+        data: {
+            "action": "select",
+            "table_s": "CustomerDetail",
+            "columns_as": "firstName, lastName",
+            "conditions_as": "customerID=" + Cookies.get('customerID')
+        },
+        success: function (data, status, xhr) {
+            if (data.success === "true") {
+                var name = data.firstName;
+                var surename = data.lastName;
+                console.log("name: " + name);
+                document.getElementById('name').children[0].innerText = "CUSTOMER: " + name.toUpperCase() + " " + surename.toUpperCase() + " ♡";
             }
-        });
-
-    request.fail(function (xhr) {
-        console.log(xhr);
+        }
     });
 }
+
 
 function load_booking() {
     window.location.href = 'booking.html';
@@ -162,15 +159,15 @@ function booking() {
         url: 'https://api.kamontat.me',
         data: {
             "action": "booking",
-            "customer_id_i": Cookies.get('customerID') /* not finish yet */,
-            "room_type_id_i": Cookies.get('RoomTypeID') /* not finish yet */,
+            "customer_id_i": Cookies.get('customerID'),
+            "room_type_id_i": Cookies.get('RoomTypeID'),
             "night_i": days_between($("#checkin").datepicker("getDate"), $("#checkout").datepicker("getDate")),
             "check_in_s": document.getElementById('checkin').value,
             "check_out_s": document.getElementById('checkout').value
         },
         success: function (data) {
-            console.log("booking is success: " + data);
             window.location.href = 'payment.html';
+            getBooking();
         }
     });
 }
@@ -182,6 +179,7 @@ function days_between(date1, date2) {
     var difference_ms = Math.abs(date1_ms - date2_ms);
     return Math.round(difference_ms / ONE_DAY);
 }
+
 
 
 

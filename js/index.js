@@ -4,7 +4,6 @@
 
 $(document).ready(function() {
     $("#team a").click(function(event) {
-        // alert(event.currentTarget.attributes.id.value);
         var id  = event.currentTarget.attributes.id.value;
         Cookies.set('RoomTypeID', id);
         window.location.href = "registration.html"
