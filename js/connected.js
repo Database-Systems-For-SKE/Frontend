@@ -61,7 +61,7 @@ function login() {
                     id = data.customerID;
                 }
                 Cookies.set("customerID", id);
-                // alert(Cookies.get('customerID'));
+                load_booking();
             } else {
                 alert("the email address or password you entered is not valid ♡\n" +
                     "you can sign up your new account by clicking a link below.");
@@ -123,6 +123,27 @@ function getPrice() {
             }
         }
     });
+}
+
+    function getCustomer() {
+        var request = $.ajax({
+            type: 'get',
+            url: 'https://api.kamontat.me',
+            data: {
+                "action": "select",
+                "table_s": "CustomerDetail",
+                "columns_as": "firstName, lastName",
+                "conditions_as": "customerID=" + Cookies.get('customerID')
+            },
+            success: function (data, status, xhr) {
+                if (data.success === "true") {
+                    var name = data.firstName;
+                    var surename = data.lastName;
+                    console.log("name: " + name);
+                    document.getElementById('name').children[0].innerText = "CUSTOMER: " + name.toUpperCase() + " " + surename.toUpperCase() + " ♡";
+                }
+            }
+        });
 
     request.fail(function (xhr) {
         console.log(xhr);
@@ -144,8 +165,8 @@ function booking() {
             "customer_id_i": Cookies.get('customerID') /* not finish yet */,
             "room_type_id_i": Cookies.get('RoomTypeID') /* not finish yet */,
             "night_i": days_between($("#checkin").datepicker("getDate"), $("#checkout").datepicker("getDate")),
-            "check_in_s": $("#checkin").datepicker("getDate"),
-            "check_out_s": $("#checkout").datepicker("getDate")
+            "check_in_s": document.getElementById('checkin').value,
+            "check_out_s": document.getElementById('checkout').value
         },
         success: function (data) {
             console.log("booking is success: " + data);

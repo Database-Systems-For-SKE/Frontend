@@ -23,6 +23,11 @@ checkOutDate, roomID, customerID-->
     <script type="text/javascript" src="js/connected.js"></script>
     <script type="text/javascript" src="js/cookie.js"></script>
     <script type="text/javascript" src="js/checker.js"></script>
+    <script>
+        $(document).ready(function () {
+            getCustomer();
+        });
+    </script>
 </head>
 <body>
 <nav id="mal-menu" class="navbar navbar-default navbar-fixed-top">
@@ -50,6 +55,8 @@ checkOutDate, roomID, customerID-->
                         <form>
                             <div class="form-group col-md-12 forbg">
                                 <div class="col-md-12">
+                                    <div id="name" style="color: #0f0f0f"><h4></h4></div>
+                                    <br>
                                     <div class="col-md-12">
                                         <div class="input-daterange input-group" data-date-start-date="+1d"
                                              id="datepicker">
