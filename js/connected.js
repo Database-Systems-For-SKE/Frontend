@@ -166,8 +166,16 @@ function booking() {
             "check_out_s": document.getElementById('checkout').value
         },
         success: function (data) {
+            if (data.success === "true") {
+                var id = 0;
+                if (data.bookingID.constructor === Array) {
+                    id = data.bookingID[data.bookingID.length - 1]
+                } else {
+                    id = data.bookingID;
+                }
+                Cookies.set("bookID", id);
+            }
             window.location.href = 'payment.html';
-            getBooking();
         }
     });
 }
